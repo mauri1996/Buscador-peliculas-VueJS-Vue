@@ -1,0 +1,6 @@
+npm install -g @vue/clie   -> instalacion de vue
+
+
+vue create buscador-peliculas
+
+npm run serve
