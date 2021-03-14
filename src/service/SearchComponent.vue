@@ -32,8 +32,7 @@
 export default {
     name:'SearchComp',
     data (){
-        return {
-            inputvalue:'',
+        return {            
             query:'',
             page:1,
             total_pages:1,

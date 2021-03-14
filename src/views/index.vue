@@ -1,9 +1,11 @@
 <template>
      <div class="home">
+            
                 <nav class="navbar navbar-dark bg-dark">
                     <div class="container">
                         <a class="navbar-brand" href="#">                        
                             Bienvenido {{user.name}} {{user.lastname}}
+                            {{mensajeRecibido}}
                         </a>
                         <form class="form-inline my-2 my-lg-0">
                             <SearchComp ref="SearchComp" v-model="searchMovies"/>
@@ -85,8 +87,11 @@
 
 <script>
 import SearchComp from '../service/SearchComponent'
-import MovieComponent from './MovieComponent'
+import MovieComponent from '../components/MovieComponent'
+
+
 import {mapMutations} from 'vuex'
+import EventBus from '../bus'
 
 export default {
     name:'MovieApp',    
@@ -111,17 +116,16 @@ export default {
             searchMovies:[               
             ],
             infPage:1,
-            supPage:10,            
+            supPage:10,
+            mensajeRecibido:''            
         }
-    }, 
-     computed:{
+    },
+    computed:{
         searchResultsItems(){
             return this.searchMovies.results.filter(i => i.poster_path != undefined)
             
         },
-        posterPath(){
-            return this.item.posterPath
-        },
+       
         favoritas (){
             return this.$store.state.favMovies
         }, ///para no escribir $store.state
@@ -234,7 +238,9 @@ export default {
 
     },
     mounted(){
-        
+        EventBus.$on('envioPeli', (item) =>{
+            this.mensajeRecibido = item             
+        });        
         let locationURL = new URL(window.location.href) // trae parametro de la url
         this.page = locationURL.searchParams.get('page') || 1
 
@@ -242,7 +248,9 @@ export default {
     },
     components:{
         MovieComponent,
-        SearchComp,                
+        SearchComp,
+        
+             
     },
 /*
     {{favoritas}}
