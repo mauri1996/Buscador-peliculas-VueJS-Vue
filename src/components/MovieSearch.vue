@@ -2,9 +2,9 @@
      <div>
         <div class="form-inline md-form form-sm mt-0">
             <div class="input-group md-form form-sm form-2 pl-0 w-100">
-                <div v-show="query" class="input-group-append">                        
+                <div v-show="query" class="input-group-text">                        
                     <span class="btn btn-danger" @click="reset()">
-                        <i class="fas fa-times"></i>
+                        <i class="fas fa-times text-grey"></i>
                     </span>
                 </div>
                 <input class="form-control my-0 py-1 green border"

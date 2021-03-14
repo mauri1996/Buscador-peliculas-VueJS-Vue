@@ -1,18 +1,12 @@
 <template>
-     <div class="home">
-            
-                <nav class="navbar navbar-dark bg-dark">
-                    <div class="container">
-                        <a class="navbar-brand" href="#">                        
-                            Bienvenido {{user.name}} {{user.lastname}}
-                            {{mensajeRecibido}}
-                        </a>
-                        <form class="form-inline my-2 my-lg-0">
-                            <SearchComp ref="SearchComp" v-model="searchMovies"/>
-                        </form>  
-                    </div>                      
-                </nav>
-                <div class="container title">
+     <div class="home">                                             
+                <div class="container busqu"> 
+                    <form class="form-inline my-2 my-lg-0">                    
+                        <h3> Busqueda: </h3>
+                        <SearchComp ref="SearchComp" v-model="searchMovies"/>                    
+                    </form> 
+                </div>
+                <div class="container title">                    
                     <h2 v-show=" !Object.keys(searchMovies).length" >Peliculas mas Populares </h2>
                     <h2 v-show=" Object.keys(searchMovies).length" >Resultados </h2>
                 </div>
@@ -271,5 +265,9 @@ export default {
     .title{
         margin-top: 15px;
         margin-bottom: 30px;
+    }
+    .busqu{
+        margin-top: 15px;
+        margin-bottom: 20px;
     }
 </style>

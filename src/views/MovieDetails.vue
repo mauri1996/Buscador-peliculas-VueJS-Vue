@@ -12,7 +12,19 @@
                         <div class="col-12 col-md-8 col-lg-9">
                             <h2>Detalles: {{movieDetails.title}}</h2>
                             <p v-text="movieDetails.overview"></p>
+                            <p><b>Duración:</b> {{movieDetails.runtime}} min</p>
+                            <p><b>Valoración:</b> {{movieDetails.vote_average}} </p>
+                            <p><b>Pagina Oficial:</b> {{movieDetails.homepage}} </p>
+                            <div class="container">
+                                <router-link class="btn btn-primary"  :to="{name:'home'}"> 
+                                    <i class="fas fa-arrow-left"></i>
+                                    Regresar
+                                </router-link>  
+
+                            </div>
+                                              
                         </div>
+                        
                     </div>
 
                 </div>
@@ -22,6 +34,7 @@
 </template>
 
 <script>
+//<button class="btn btn-link"> {{movieDetails.homepage}} </button>
 export default {
     name:'MovieDetails',
     data(){
@@ -37,6 +50,7 @@ export default {
             fetch(url)
             .then(res => res.json())
             .then(data =>{
+                console.log(data)
                 this.movieDetails= data
             })
             //console.log(movieDetails.backdrop_path)

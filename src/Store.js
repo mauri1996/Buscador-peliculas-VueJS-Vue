@@ -24,7 +24,8 @@ Vue.mixin({
  //Vuex -> Store
 export let store= new Vuex.Store({
   state:{
-      favMovies:[]
+      favMovies:[],
+      userName: ''
   },
   mutations:{
       toogleFavMovie(state,movie){
@@ -34,6 +35,9 @@ export let store= new Vuex.Store({
               return
           }
           state.favMovies.push(movie)
+      },
+      changeUserName(state,name){
+        state.userName=name
       }
   }
 })

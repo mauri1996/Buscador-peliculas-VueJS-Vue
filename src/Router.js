@@ -9,12 +9,12 @@ export const router = new VueRouter({
     routes:[
         {
             path: '/pelicula/:id',
-            name: 'MovieDetails',
+            name: 'pelicula',
             component: () => import (/*webpackChunkName */ './views/MovieDetails.vue') // debe tener una variable en los componentes
         },  
         {
             path: '/',
-            name: 'MovieApp',
+            name: 'home',
             component: () => import (/*webpackChunkName */ './views/index.vue') // debe tener una variable en los componentes
         },
         
