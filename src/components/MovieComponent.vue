@@ -4,7 +4,7 @@
             <ImageMovie :cover="cover | completarPoster " :like="isFav" ></ImageMovie>
         </div>
         <div class="card-body">
-            <h2 class="card-title"> <b>Titulo:</b> {{title | uppercase }} {{$store.state.counter}} </h2>
+            <h3 class="card-title"> <b>Titulo:</b> {{title | uppercase }} {{$store.state.counter}} </h3>
             <p class="card-text" >{{synopsis | formateo}} </p>
             <div class="container">
                 <button class="btn" :class="{
@@ -23,7 +23,7 @@
                     }"></i>
 
                 </button>
-                <router-link class="btn btn-primary but"  data-toggle="modal" :to="{name:'pelicula' , params:{id:id}}"> Detalle</router-link>                    
+                <router-link class="btn btn-primary but"  data-toggle="modal" :to="{name:'pelicula' , params:{id:id }}"> Detalle</router-link>                    
             </div>
                        
         </div>

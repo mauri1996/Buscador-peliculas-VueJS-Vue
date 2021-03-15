@@ -2,7 +2,7 @@
      <div class="home">                                             
                 <div class="container busqu"> 
                     <form class="form-inline my-2 my-lg-0">                    
-                        <h3> Busqueda: </h3>
+                        <h3> <b>Busqueda:</b> </h3>
                         <SearchComp ref="SearchComp" v-model="searchMovies"/>                    
                     </form> 
                 </div>

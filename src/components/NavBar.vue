@@ -5,9 +5,9 @@
                 <h4 v-if="comprobarUser" >Bienvenido {{getUser}} </h4>                
                 <h4 v-else>Bienvenido </h4>                
             </a>
-            <form class="form-inline my-2 my-lg-0">
-                <button class="btn btn-dark" @click="changeUser()">Ingresar</button>
-                <button class="btn btn-dark" @click="changeUser()">Salir</button>
+            <form class="inline my-2 my-lg-0">
+                <button v-if= "!comprobarUser" class="btn btn-dark" @click.prevent="changeUser()">Ingresar</button>                
+                <button class="btn btn-dark" @click.prevent="changeUser()">Salir</button>
             </form>  
         </div>                      
     </nav>
@@ -29,7 +29,7 @@ export default {
             if(this.$store.state.userName != ''){
                 this.changeUserName('')
             }else{
-                this.changeUserName('Mauri')
+                this.changeUserName('Papu')
             }    
         }    
     },
